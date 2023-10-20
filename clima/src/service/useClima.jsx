@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 function useClima() {
   const [data, setData] = useState(null);
-  const [viento, setViento] = useState("");
+  const [week, setWeek] = useState(null);
 
   // costante para realizar el fetch
   const getData = async (url, setState) => {
@@ -11,7 +11,7 @@ function useClima() {
 
     setState(datos);
   };
-  console.log(data);
+  console.log(week);
 
   //// aca esta el use efect
   useEffect(() => {
@@ -21,8 +21,16 @@ function useClima() {
     );
   }, []);
 
+  // fetch a la segunda api
+  useEffect(() => {
+    getData(
+      "https://api.openweathermap.org/data/2.5/forecast?q=guatemala&appid=2f9b41a511d1351d341bc7bd79cd2e13&units=metric",
+      setWeek
+    );
+  }, []);
+
   /// aca estoy retornando la data
-  return { data };
+  return { data, week };
 }
 // aca estoy exportando
 export default useClima;

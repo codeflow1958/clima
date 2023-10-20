@@ -5,11 +5,11 @@ import Pronostico from "./componentes/Pronostico";
 
 function App() {
   // aca esta la cosntante de la data obtenida del la api
-  const { data } = useClima();
+  const { data, week } = useClima();
   return (
     <>
       <Tarjetap data={data} />
-      <Pronostico />
+      <Pronostico data={week} />
       <Info data={data} />
     </>
   );
