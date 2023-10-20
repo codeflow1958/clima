@@ -1,7 +1,7 @@
 import React from "react";
 import Buscador from "./Buscador";
 
-function Tarjetap() {
+function Tarjetap({ data }) {
   return (
     <div>
       <div>
@@ -11,14 +11,14 @@ function Tarjetap() {
         <img src="" alt="" /> aca va la imagen{" "}
       </div>
       <div>
-        <p>15c</p>
-        <p>aca el clima</p>
+        <p>{data?.main.temp} </p>
+        <p>{data?.weather.main} </p>
         <div>
           <div>
-            <p>el dia</p>
-            <i> celsus o sentigrados</i>
+            <p>Today</p>
+            <i>c</i>
           </div>
-          <p> fecha</p>
+          <p></p>
         </div>
         <p> ubicacion</p>
       </div>
