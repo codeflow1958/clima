@@ -18,7 +18,7 @@ function Tarjetap({ data }) {
             <p>Today</p>
             <i>c</i>
           </div>
-          <p></p>
+          <p> </p>
         </div>
         <p> ubicacion</p>
       </div>

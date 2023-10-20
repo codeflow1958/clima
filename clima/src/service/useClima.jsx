@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 function useClima() {
   const [data, setData] = useState(null);
+  const [viento, setViento] = useState("");
 
   // costante para realizar el fetch
   const getData = async (url, setState) => {
@@ -19,6 +20,7 @@ function useClima() {
       setData
     );
   }, []);
+
   /// aca estoy retornando la data
   return { data };
 }
