@@ -11,7 +11,7 @@ function useClima() {
 
     setState(datos);
   };
-  console.log(data?.weather[0].description);
+  console.log(data);
 
   //// aca esta el use efect
   useEffect(() => {
