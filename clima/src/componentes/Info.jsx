@@ -1,6 +1,6 @@
 function Info({ data }) {
   return (
-    <div>
+    <div className="info">
       <div>
         <h1> Today Hightlights</h1>
       </div>

@@ -12,7 +12,8 @@ function Tarjetap({ data }) {
       </div>
       <div>
         <p>{data?.main.temp} </p>
-        <p>{data?.weather.main} </p>
+        <p>{data?.weather[0].description}</p>
+
         <div>
           <div>
             <p>Today</p>

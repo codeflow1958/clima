@@ -1,7 +1,7 @@
 import Card from "./Card";
 function Pronostico() {
   return (
-    <div>
+    <div className="pronostico">
       <Card></Card>
       <Card></Card>
       <Card></Card>

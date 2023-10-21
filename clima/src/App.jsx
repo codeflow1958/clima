@@ -1,3 +1,4 @@
+import "./App.css";
 import Tarjetap from "./componentes/Tarjetap";
 import useClima from "./service/useClima";
 import Info from "./componentes/Info";
@@ -8,9 +9,13 @@ function App() {
   const { data, week } = useClima();
   return (
     <>
-      <Tarjetap data={data} />
-      <Pronostico data={week} />
-      <Info data={data} />
+      <div className=" divmaster">
+        <Tarjetap data={data} />
+        <div className="div2">
+          <Pronostico data={week} />
+          <Info data={data} />
+        </div>
+      </div>
     </>
   );
 }
