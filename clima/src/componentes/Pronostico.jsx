@@ -1,12 +1,11 @@
 import Card from "./Card";
-function Pronostico() {
+function Pronostico({ data }) {
   return (
     <div className="pronostico">
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
+      <Card data={data} />
+      <Card data={data} />
+      <Card data={data} />
+      <Card data={data} />
     </div>
   );
 }

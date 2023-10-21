@@ -11,7 +11,7 @@ function useClima() {
 
     setState(datos);
   };
-  console.log(data);
+  console.log(week.list[0].main.temp);
 
   //// aca esta el use efect
   useEffect(() => {
