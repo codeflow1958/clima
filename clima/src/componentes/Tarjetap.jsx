@@ -1,12 +1,9 @@
 import React from "react";
-import Buscador from "./Buscador";
 
 function Tarjetap({ data }) {
   return (
     <div>
-      <div>
-        <Buscador></Buscador>
-      </div>
+      <div></div>
       <div>
         <img src="" alt="" /> aca va la imagen{" "}
       </div>

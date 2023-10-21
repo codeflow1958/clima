@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    
   }
 
   div{
@@ -9,7 +10,7 @@
   }
   .divmaster{
     display: flex;
-    height: 100%;
+    height: 180px;
     width: 100%;
   }
   .pronostico{

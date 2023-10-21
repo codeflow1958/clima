@@ -4,7 +4,7 @@ function Pronostico({ data }) {
   return (
     <div className="pronostico">
       <div>
-        <div>day{dateFormat(data?.list[9].sys.dt_txt)}</div>
+        <div>day{dateFormat(data?.list[9].dt)}</div>
         <div>img</div>
         <div>
           <div></div>
@@ -12,7 +12,7 @@ function Pronostico({ data }) {
         </div>
       </div>
       <div>
-        <div>day </div>
+        <div>day{dateFormat(data?.list[18].dt)} </div>
         <div>img</div>
         <div>
           <div> </div>
@@ -20,7 +20,7 @@ function Pronostico({ data }) {
         </div>
       </div>
       <div>
-        <div>day </div>
+        <div>day{dateFormat(data?.list[26].dt)} </div>
         <div>img</div>
         <div>
           <div> </div>
@@ -28,11 +28,11 @@ function Pronostico({ data }) {
         </div>
       </div>
       <div>
-        <div>day </div>
+        <div>day {dateFormat(data?.list[34].dt)}</div>
         <div>img</div>
         <div>
           <div> </div>
-          <div>temp {data?.list[4].main.temp} </div>
+          <div>temp {data?.list[34].main.temp} </div>
         </div>
       </div>
     </div>

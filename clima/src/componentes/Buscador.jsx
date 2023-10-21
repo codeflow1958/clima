@@ -1,10 +1,13 @@
-import React from "react";
+import useClima from "../service/useClima";
 
 function Buscador() {
+  const { changeContry } = useClima();
   return (
     <div>
-      <input type="text" />
-      <button> soy el Buscador</button>
+      <form onSubmit={changeContry}>
+        <input type="text" />
+        <button> soy el Buscador</button>
+      </form>
     </div>
   );
 }
