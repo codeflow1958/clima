@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
 function useClima() {
-  const [data, setData] = useState();
-  const [week, setWeek] = useState();
-  const [contry, setContry] = useState("quito");
+  const [data, setData] = useState(null);
+  const [week, setWeek] = useState(null);
+  const [country, setCountry] = useState("sidney");
 
   // costante para realizar el fetch
   const getData = async (url, setState) => {
@@ -12,38 +12,35 @@ function useClima() {
 
     setState(datos);
   };
-  console.log(week?.list[30].dt);
 
   //// aca esta el use efect
   useEffect(() => {
     getData(
-      `https://api.openweathermap.org/data/2.5/weather?q=${contry}&appid=2f9b41a511d1351d341bc7bd79cd2e13&units=metric`,
+      `https://api.openweathermap.org/data/2.5/weather?q=${country}&appid=2f9b41a511d1351d341bc7bd79cd2e13&units=metric`,
       setData
     );
-  }, [contry]);
+  }, [country]);
 
   // fetch a la segunda api
   useEffect(() => {
     getData(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${contry}&appid=2f9b41a511d1351d341bc7bd79cd2e13&units=metric`,
+      `https://api.openweathermap.org/data/2.5/forecast?q=${country}&appid=2f9b41a511d1351d341bc7bd79cd2e13&units=metric`,
       setWeek
     );
-  }, [contry]);
-
-  const dateFormat = (date) => {
-    const options = { weekday: "short", day: "numeric", month: "short" };
-    const day = new Date(date);
-    return day.toLocaleDateString("en-gb", options);
-  };
-  console.log(contry);
-
+  }, [country]);
   const changeContry = (e) => {
     e.preventDefault();
-    setContry(e.target[0].value);
+    setCountry(e.target[0].value);
   };
 
+  const dateFormat = (date) => {
+    const fecha = new Date(date * 1000);
+    return fecha.toLocaleDateString("en-gb");
+  };
+  console.log(dateFormat(1698080400));
+
   /// aca estoy retornando la data
-  return { data, week, dateFormat, changeContry };
+  return { data, week, dateFormat, changeContry, country };
 }
 // aca estoy exportando
 export default useClima;

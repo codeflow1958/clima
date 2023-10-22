@@ -6,9 +6,10 @@ import Pronostico from "./componentes/Pronostico";
 import Buscador from "./componentes/Buscador";
 function App() {
   // aca esta la cosntante de la data obtenida del la api
-  const { data, week } = useClima();
+  const { data, week, country } = useClima();
   return (
     <>
+      {country}
       <Buscador></Buscador>
       <div className=" divmaster">
         <Tarjetap data={data} />
