@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 function useClima() {
   const [data, setData] = useState(null);
   const [week, setWeek] = useState(null);
-  const [country, setCountry] = useState("sidney");
+  const [country, setCountry] = useState("guatemala");
 
   // costante para realizar el fetch
   const getData = async (url, setState) => {

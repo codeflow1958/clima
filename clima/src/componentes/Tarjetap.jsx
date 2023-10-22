@@ -1,14 +1,17 @@
 import React from "react";
 
 function Tarjetap({ data }) {
-  let url = "https://openweathermap.org/img/wn/";
-  let iconurl = url + data?.weather[0].icon + ".png";
+  // let url = "https://openweathermap.org/img/wn/";
+  //let iconurl = url + data?.weather[0].icon + ".png";
 
   return (
     <div>
       <div></div>
       <div>
-        <img src={iconurl} alt="" />
+        <img
+          src={`https://openweathermap.org/img/wn/${data?.weather[0].icon}.png`}
+          alt=""
+        />
       </div>
       <div>
         <p>{data?.main.temp} c </p>
