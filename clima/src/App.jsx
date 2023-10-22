@@ -6,18 +6,17 @@ import Pronostico from "./componentes/Pronostico";
 import Buscador from "./componentes/Buscador";
 function App() {
   // aca esta la cosntante de la data obtenida del la api
-  const { data, week, country } = useClima();
+   const handleOnSearchChange = (searchData) =>{
+    console.log(searchData)
+
+   }
+
+
   return (
     <>
-      {country}
-      <Buscador></Buscador>
-      <div className=" divmaster">
-        <Tarjetap data={data} />
-        <div className="div2">
-          <Pronostico data={week} />
-          <Info data={data} />
-        </div>
-      </div>
+      
+      <Buscador onSearchChange={handleOnSearchChange}/>
+      
     </>
   );
 }

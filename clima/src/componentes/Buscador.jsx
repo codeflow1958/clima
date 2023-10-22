@@ -1,15 +1,22 @@
+import { useState } from "react";
 import useClima from "../service/useClima";
 
-function Buscador() {
-  const { changeContry } = useClima();
+const Buscador = ({onSearchChange}) => {
+  const [search, setSearch] = useState(null);
+
+  const handleOnchange = (searchData) => {
+    setSearch(searchData);
+    onSearchChange(searchData);
+  };
+
   return (
-    <div>
-      <form onSubmit={changeContry}>
-        <input type="text" />
-        <button> soy el Buscador</button>
-      </form>
-    </div>
+    <AsyncPaginate
+      placeholder="search for city"
+      debouceTimeout={600}
+      value={search}
+      onChange={handleOnchange}
+    />
   );
-}
+};
 
 export default Buscador;
