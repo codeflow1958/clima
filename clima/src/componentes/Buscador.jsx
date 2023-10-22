@@ -1,7 +1,7 @@
 import { useState } from "react";
-import useClima from "../service/useClima";
+import { AsyncPaginate } from "react-select-async-paginate";
 
-const Buscador = ({onSearchChange}) => {
+const Buscador = ({ onSearchChange }) => {
   const [search, setSearch] = useState(null);
 
   const handleOnchange = (searchData) => {
