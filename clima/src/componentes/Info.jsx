@@ -8,21 +8,21 @@ function Info({ data }) {
         <section>
           <div>
             <p>Wind Status</p>
-            <p>{data?.wind.speed} mph</p>
+            <p>{data?.current.wind_speed} mph</p>
           </div>
           <div>
             <p>Humidity</p>
-            <p>{data?.main.humidity}</p>
+            <p>{data?.current.humidity}</p>
           </div>
         </section>
         <section>
           <div>
             <p>visibilyti</p>
-            <p>{data?.visibility} </p>
+            <p>{data?.current.visibility} </p>
           </div>
           <div>
             <p>Air Presure</p>
-            <p>{data?.main.pressure}</p>
+            <p>{data?.current.pressure}</p>
           </div>
         </section>
       </div>

@@ -1,7 +1,7 @@
 import useClima from "../service/useClima";
 
 function Buscador() {
-  const { changeContry } = useClima();
+  const { changeContry, cahngeLat } = useClima();
   return (
     <div>
       <form onSubmit={changeContry}>

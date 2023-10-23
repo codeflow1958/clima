@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 function useClima() {
   const [data, setData] = useState(null);
   const [week, setWeek] = useState(null);
+  const [lat, setLat] = useState(null);
+  const [lon, setLon] = useState(null);
   const [country, setCountry] = useState("nicaragua");
 
   // costante para realizar el fetch
@@ -13,13 +15,13 @@ function useClima() {
     setState(datos);
   };
 
-  //// aca esta el use efect
   useEffect(() => {
     getData(
-      `https://api.openweathermap.org/data/2.5/weather?q=${country}&appid=2f9b41a511d1351d341bc7bd79cd2e13&units=metric`,
+      `https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&exclude=hourly,minutely&appid=2f9b41a511d1351d341bc7bd79cd2e13`,
       setData
     );
   }, [country]);
+  //// aca esta el use efect
 
   // fetch a la segunda api
   useEffect(() => {
@@ -37,8 +39,15 @@ function useClima() {
     const fecha = new Date(date * 1000);
     return fecha.toLocaleDateString("en-gb");
   };
-  
-  console.log(week.city.coord.lat);
+
+  /* useEffect(() => {
+    setLat(week.city.coord.lat);
+  }, []);
+  useEffect(() => {
+    setLon(week.city.coord.lon);
+  }, []);*/
+
+  console.log(data);
 
   /// aca estoy retornando la data
   return { data, week, dateFormat, changeContry, country };

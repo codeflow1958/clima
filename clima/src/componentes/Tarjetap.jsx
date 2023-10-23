@@ -9,17 +9,17 @@ function Tarjetap({ data }) {
       <div></div>
       <div>
         <img
-          src={`https://openweathermap.org/img/wn/${data?.weather[0].icon}.png`}
+          src={`https://openweathermap.org/img/wn/${data.current.weather[0].icon}.png`}
           alt=""
         />
       </div>
       <div>
-        <p>{data?.main.temp} c </p>
-        <p>{data?.weather[0].description}</p>
+        <p>{data?.current.temp} c </p>
+        <p>{data?.current.weather[0].description}</p>
 
         <div>
           <div>
-            <p>{data?.main.temp} </p>
+            <p> </p>
             <i>c</i>
           </div>
           <p> </p>

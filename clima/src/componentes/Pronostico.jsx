@@ -3,7 +3,20 @@ function Pronostico({ data }) {
   const { dateFormat } = useClima();
 
   return (
-    <div className="pronostico">
+    <>
+      {data.daily.map((item, idx) => (
+        <div key={idx}>
+          <p>hola</p>
+        </div>
+      ))}
+    </>
+  );
+}
+
+export default Pronostico;
+
+/*
+ <div className="pronostico">
       <div>
         <div>day{dateFormat(data?.list[3].dt)}</div>
         <div> </div>
@@ -12,32 +25,7 @@ function Pronostico({ data }) {
           <div>temp {data?.list[3].main.temp} </div>
         </div>
       </div>
-      <div>
-        <div>day{dateFormat(data?.list[15].dt)} </div>
-        <div></div>
-        <div>
-          <div> </div>
-          <div>temp {data?.list[15].main.temp} </div>
-        </div>
-      </div>
-      <div>
-        <div>day{dateFormat(data?.list[18].dt)} </div>
-        <div>img</div>
-        <div>
-          <div> </div>
-          <div>temp {data?.list[18].main.temp} </div>
-        </div>
-      </div>
-      <div>
-        <div>day {dateFormat(data?.list[28].dt)}</div>
-        <div>img</div>
-        <div>
-          <div> </div>
-          <div>temp {data?.list[2].main.temp} </div>
-        </div>
-      </div>
+      
     </div>
-  );
-}
 
-export default Pronostico;
+*/

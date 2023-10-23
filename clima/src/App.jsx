@@ -14,7 +14,7 @@ function App() {
       <div className=" divmaster">
         <Tarjetap data={data} />
         <div className="div2">
-          <Pronostico data={week} />
+          <Pronostico data={data} />
           <Info data={data} />
         </div>
       </div>
