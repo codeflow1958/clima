@@ -14,6 +14,8 @@ function useClima() {
 
     setState(datos);
   };
+  console.log(week.city.coord.lon);
+  console.log(data);
 
   useEffect(() => {
     getData(
@@ -46,8 +48,6 @@ function useClima() {
   useEffect(() => {
     setLon(week.city.coord.lon);
   }, []);*/
-
-  console.log(data);
 
   /// aca estoy retornando la data
   return { data, week, dateFormat, changeContry, country };

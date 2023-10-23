@@ -4,9 +4,19 @@ function Pronostico({ data }) {
 
   return (
     <>
-      {data.daily.map((item, idx) => (
+      {data.daily.splice(0, 4).map((item, idx) => (
         <div key={idx}>
-          <p>hola</p>
+          <div>{dateFormat(item.daily.dt)} </div>
+          <div>
+            <img
+              src={`https://openweathermap.org/img/wn/${item.current.weather[0].icon}.png`}
+              alt="Weather"
+            />
+          </div>
+          <div>
+            <div className="minima">{item.temp.min}</div>
+            <div class="maxima">{item.temp.max}</div>
+          </div>
         </div>
       ))}
     </>
