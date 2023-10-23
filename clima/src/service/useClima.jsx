@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 function useClima() {
   const [data, setData] = useState(null);
   const [week, setWeek] = useState(null);
-  const [country, setCountry] = useState("guatemala");
+  const [country, setCountry] = useState("nicaragua");
 
   // costante para realizar el fetch
   const getData = async (url, setState) => {
@@ -37,7 +37,8 @@ function useClima() {
     const fecha = new Date(date * 1000);
     return fecha.toLocaleDateString("en-gb");
   };
-  console.log(dateFormat(1698080400));
+  
+  console.log(week.city.coord.lat);
 
   /// aca estoy retornando la data
   return { data, week, dateFormat, changeContry, country };

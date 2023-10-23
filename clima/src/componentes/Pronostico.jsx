@@ -5,11 +5,11 @@ function Pronostico({ data }) {
   return (
     <div className="pronostico">
       <div>
-        <div>day{dateFormat(data?.list[9].dt)}</div>
+        <div>day{dateFormat(data?.list[3].dt)}</div>
         <div> </div>
         <div>
           <div></div>
-          <div>temp {data?.list[9].main.temp} </div>
+          <div>temp {data?.list[3].main.temp} </div>
         </div>
       </div>
       <div>
