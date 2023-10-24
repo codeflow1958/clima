@@ -3,7 +3,13 @@ import React from "react";
 function Tarjetap({ data }) {
   // let url = "https://openweathermap.org/img/wn/";
   //let iconurl = url + data?.weather[0].icon + ".png";
-  console.log(data.current?.weather[0].icon);
+
+  const dateFormat = (date) => {
+    const options = { weekday: "short", day: "numeric", month: "short" };
+    const day = new Date(date);
+    return day.toLocaleDateString("en-gb", options);
+  };
+
   return (
     <>
       <div>
@@ -20,8 +26,8 @@ function Tarjetap({ data }) {
 
           <div>
             <div>
-              <p> </p>
-              <i>c</i>
+              <p>Today</p>
+              <i> </i>
             </div>
             <p> </p>
           </div>

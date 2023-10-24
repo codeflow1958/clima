@@ -22,3 +22,6 @@
     align-content: center;
     justify-content: stretch;
   }
+  .prediccion{
+    display: flex;
+  }

@@ -10,7 +10,7 @@ function Info({ data }) {
             <section>
               <div>
                 <p>Wind Status</p>
-                <p>{data.curre?.wind_speed} mph</p>
+                <p>{data.current?.wind_speed}Mph</p>
               </div>
               <div>
                 <p>Humidity</p>

@@ -14,12 +14,14 @@ function useClima() {
 
     setState(datos);
   };
-  //console.log(week.city.coord.lon);
-  //console.log(data);
+  console.log(week);
+  console.log(data);
+  console.log(lat);
+  console.log(lon);
 
   useEffect(() => {
     getData(
-      `https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&exclude=hourly,minutely&appid=2f9b41a511d1351d341bc7bd79cd2e13&units=metric`,
+      `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely&appid=2f9b41a511d1351d341bc7bd79cd2e13&units=metric`,
       setData
     );
   }, [country]);
@@ -28,14 +30,13 @@ function useClima() {
   // fetch a la segunda api
   useEffect(() => {
     getData(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${country}&appid=2f9b41a511d1351d341bc7bd79cd2e13&units=metric`,
+      `http://api.openweathermap.org/geo/1.0/direct?q=${country}&limit=5&appid=2f9b41a511d1351d341bc7bd79cd2e13`,
       setWeek
     );
   }, [country]);
 
-  const changeContry = (e) => {
-    e.preventDefault();
-    setCountry(e.target[0].value);
+  const changeContry = (ciudad) => {
+    setCountry(ciudad);
   };
 
   const dateFormat = (date) => {
@@ -43,12 +44,12 @@ function useClima() {
     return fecha.toLocaleDateString("en-gb");
   };
 
-  /* useEffect(() => {
-    setLat(week.city.coord.lat);
-  }, []);
   useEffect(() => {
-    setLon(week.city.coord.lon);
-  }, []);*/
+    setLat(week[0]?.lat);
+  }, [country]);
+  useEffect(() => {
+    setLon(week[0]?.lon);
+  }, [country]);
 
   /// aca estoy retornando la data
   return { data, week, dateFormat, changeContry, country };
