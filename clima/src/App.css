@@ -1,0 +1,27 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+  }
+
+  div{
+    border: solid 1px;
+  }
+  .divmaster{
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+  .pronostico{
+    display: flex;
+  }
+
+  .info{
+    display: grid;
+    align-content: center;
+    justify-content: stretch;
+  }
+  .prediccion{
+    display: flex;
+  }
