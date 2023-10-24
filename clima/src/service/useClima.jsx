@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
 function useClima() {
-  const [data, setData] = useState(null);
-  const [week, setWeek] = useState(null);
-  const [lat, setLat] = useState(null);
-  const [lon, setLon] = useState(null);
-  const [country, setCountry] = useState("nicaragua");
+  const [data, setData] = useState([]);
+  const [week, setWeek] = useState([]);
+  const [lat, setLat] = useState("");
+  const [lon, setLon] = useState("");
+  const [country, setCountry] = useState("guatemala");
 
   // costante para realizar el fetch
   const getData = async (url, setState) => {
@@ -14,12 +14,12 @@ function useClima() {
 
     setState(datos);
   };
-  console.log(week.city.coord.lon);
-  console.log(data);
+  //console.log(week.city.coord.lon);
+  //console.log(data);
 
   useEffect(() => {
     getData(
-      `https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&exclude=hourly,minutely&appid=2f9b41a511d1351d341bc7bd79cd2e13`,
+      `https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&exclude=hourly,minutely&appid=2f9b41a511d1351d341bc7bd79cd2e13&units=metric`,
       setData
     );
   }, [country]);
@@ -32,6 +32,7 @@ function useClima() {
       setWeek
     );
   }, [country]);
+
   const changeContry = (e) => {
     e.preventDefault();
     setCountry(e.target[0].value);

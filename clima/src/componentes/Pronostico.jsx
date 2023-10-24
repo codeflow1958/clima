@@ -1,21 +1,21 @@
-import useClima from "../service/useClima";
+import React from "react";
 function Pronostico({ data }) {
-  const { dateFormat } = useClima();
+  //console.log(data.weather.icon);
 
   return (
     <>
-      {data.daily.splice(0, 4).map((item, idx) => (
+      {data.daily?.map((item, idx) => (
         <div key={idx}>
-          <div>{dateFormat(item.daily.dt)} </div>
+          <div></div>
           <div>
             <img
-              src={`https://openweathermap.org/img/wn/${item.current.weather[0].icon}.png`}
+              src={`https://openweathermap.org/img/wn/${item?.weather[0].icon}.png`}
               alt="Weather"
             />
           </div>
           <div>
-            <div className="minima">{item.temp.min}</div>
-            <div class="maxima">{item.temp.max}</div>
+            <div className="minima">{item.temp?.min}</div>
+            <div class="maxima">{item.temp?.max}</div>
           </div>
         </div>
       ))}

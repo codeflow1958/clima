@@ -1,32 +1,36 @@
 function Info({ data }) {
   return (
-    <div className="info">
-      <div>
-        <h1> Today Hightlights</h1>
-      </div>
-      <div>
-        <section>
+    <>
+      {data && (
+        <div className="info">
           <div>
-            <p>Wind Status</p>
-            <p>{data?.current.wind_speed} mph</p>
+            <h1> Today Hightlights</h1>
           </div>
           <div>
-            <p>Humidity</p>
-            <p>{data?.current.humidity}</p>
+            <section>
+              <div>
+                <p>Wind Status</p>
+                <p>{data.curre?.wind_speed} mph</p>
+              </div>
+              <div>
+                <p>Humidity</p>
+                <p>{data.current?.humidity}</p>
+              </div>
+            </section>
+            <section>
+              <div>
+                <p>visibilyti</p>
+                <p>{data.current?.visibility} </p>
+              </div>
+              <div>
+                <p>Air Presure</p>
+                <p>{data.current?.pressure}</p>
+              </div>
+            </section>
           </div>
-        </section>
-        <section>
-          <div>
-            <p>visibilyti</p>
-            <p>{data?.current.visibility} </p>
-          </div>
-          <div>
-            <p>Air Presure</p>
-            <p>{data?.current.pressure}</p>
-          </div>
-        </section>
-      </div>
-    </div>
+        </div>
+      )}
+    </>
   );
 }
 
