@@ -16,6 +16,12 @@ function useClima() {
     setState(datos);
   };
 
+
+  //console.log(week);
+  //console.log(data);
+  //console.log(lat);
+  //console.log(lon);
+
   useEffect(() => {
     if (lat === "" && lon === "") return;
     getData(
