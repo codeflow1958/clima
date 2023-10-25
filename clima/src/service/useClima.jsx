@@ -14,6 +14,8 @@ function useClima() {
 
     setState(datos);
   };
+
+
   //console.log(week);
   //console.log(data);
   //console.log(lat);
