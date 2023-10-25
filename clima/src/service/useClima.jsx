@@ -12,15 +12,17 @@ function useClima() {
     const res = await fetch(url);
     const datos = await res.json();
 
+    console.log(datos);
     setState(datos);
   };
 
   useEffect(() => {
+    if (lat === "" && lon === "") return;
     getData(
       `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely&appid=2f9b41a511d1351d341bc7bd79cd2e13&units=metric`,
       setData
     );
-  }, [country]);
+  }, [lat, lon]);
   //// aca esta el use efect
 
   // fetch a la segunda api
@@ -42,10 +44,10 @@ function useClima() {
 
   useEffect(() => {
     setLat(week[0]?.lat);
-  }, [country]);
+  }, [week]);
   useEffect(() => {
     setLon(week[0]?.lon);
-  }, [country]);
+  }, [week]);
 
   /// aca estoy retornando la data
   return { data, week, dateFormat, changeContry, country };
