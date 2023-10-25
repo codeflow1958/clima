@@ -2,7 +2,7 @@ function Info({ data }) {
   return (
     <>
       {data && (
-        <div className="info">
+        <div>
           <div>
             <h1> Today Hightlights</h1>
           </div>
