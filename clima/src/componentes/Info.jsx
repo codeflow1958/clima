@@ -1,12 +1,12 @@
 function Info({ data }) {
   return (
     <>
-      <div className="info">
-        <div>
+      <div>
+        <div className="">
           <h1> Today Hightlights</h1>
         </div>
         <div>
-          <section>
+          <section className="w-96 grid grid-cols-2 gap-4 py-3 px-3 ">
             <div>
               <p>Wind Status</p>
               <p>{data.current?.wind_speed}Mph</p>
@@ -16,7 +16,7 @@ function Info({ data }) {
               <p>{data.current?.humidity}</p>
             </div>
           </section>
-          <section>
+          <section className="w-96 grid grid-cols-2 gap-4 py-3  px-3">
             <div>
               <p>visibilyti</p>
               <p>{data.current?.visibility} </p>
