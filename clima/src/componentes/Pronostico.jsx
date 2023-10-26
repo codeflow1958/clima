@@ -10,7 +10,7 @@ function Pronostico({ data }) {
     <>
       <div className="w-100 grid grid-cols-4 gap-4 ">
         {data.daily?.map((item, idx) => (
-          <div key={idx} className="py-2 px-2 ">
+          <div key={idx} className="py-2 px-2 bg-teal-400">
             <div> {dateFormat(item.dt)}</div>
             <div>
               <img
@@ -18,7 +18,7 @@ function Pronostico({ data }) {
                 alt="Weather"
               />
             </div>
-            <div>
+            <div className=" grid grid-cols-2">
               <div className="minima">Min{item.temp?.min}</div>
               <div className="maxima">Max{item.temp?.max}</div>
             </div>
